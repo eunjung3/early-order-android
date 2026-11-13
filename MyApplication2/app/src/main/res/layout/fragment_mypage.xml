@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/Lo_other"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:elevation="4dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp">
+
+            <TextView
+                android:id="@+id/tv_order_title"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:text="Other"
+                android:textColor="@android:color/black"
+                android:textSize="34sp"
+                android:gravity="center"/>
+        </FrameLayout>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray" />
+    </LinearLayout>
+
+    <!-- 로그인되지 않은 상태에서 보일 화면 -->
+    <FrameLayout
+        android:id="@+id/Lo_losi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Lo_other"
+        android:layout_marginTop="16dp"
+        android:padding="16dp">
+
+        <!-- 로그인 전 화면 -->
+        <LinearLayout
+            android:id="@+id/layout_before_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/login_info_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="로그인 후 이용이 가능합니다."
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/login_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#836043"
+                    android:textSize="14sp"
+                    app:cornerRadius="16dp"
+                    android:text="로그인" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="20dp"
+                    android:layout_marginHorizontal="8dp"
+                    android:background="#000000" />
+
+                <Button
+                    android:id="@+id/register_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#836043"
+                    android:textSize="14sp"
+                    app:cornerRadius="16dp"
+                    android:text="회원가입" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 로그인 후 화면 -->
+        <LinearLayout
+            android:id="@+id/layout_after_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:visibility="gone"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="사용자 이름"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"/>
+
+                <TextView
+                    android:id="@+id/tv_user_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="user@email.com"
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_my_info"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="내정보"
+                android:textSize="14sp"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#836043"
+                android:paddingHorizontal="16dp"
+                android:layout_marginStart="16dp"
+                android:minWidth="0dp"
+                app:cornerRadius="20dp" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- 구분 가로선 -->
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/Lo_losi"
+        android:background="@android:color/darker_gray"
+        android:layout_margin="16dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/divider2"
+        android:layout_marginTop="10dp"
+        android:padding="16dp">
+
+<!--        <Button-->
+<!--            android:id="@+id/btn_card_registration"-->
+<!--            style="@style/Widget.AppCompat.Button.Borderless"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="카드 등록"-->
+<!--            android:textColor="#000000"-->
+<!--            android:textSize="18sp" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btn_payment_method"-->
+<!--            style="@style/Widget.AppCompat.Button.Borderless"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="결제 수단 관리"-->
+<!--            android:textColor="#000000"-->
+<!--            android:textSize="18sp" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btn_order"-->
+<!--            style="@style/Widget.AppCompat.Button.Borderless"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="주문하기"-->
+<!--            android:textColor="#000000"-->
+<!--            android:textSize="18sp" />-->
+
+        <Button
+            android:id="@+id/btn_order_history"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="주문 내역"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:gravity="start|center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="16dp"/>
+
+        <Button
+            android:id="@+id/btn_cart"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="장바구니"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:gravity="start|center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="16dp"/>
+
+        <Button
+            android:id="@+id/btn_favorites"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="즐겨찾기"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:gravity="start|center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="16dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

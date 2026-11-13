@@ -1,0 +1,154 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <!-- 상단 Order 제목과 가로선 -->
+    <LinearLayout
+        android:id="@+id/Ll_od"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:elevation="4dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp">
+
+            <TextView
+                android:id="@+id/tv_order_title"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="5dp"
+                android:text="Order"
+                android:textColor="@android:color/black"
+                android:textSize="34sp"
+                android:gravity="center"/>
+        </FrameLayout>
+
+        <!-- 구분 가로선 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray" />
+    </LinearLayout>
+
+    <!-- HorizontalScrollView를 추가하여 TabLayout을 감쌉니다 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        android:background="#4DD6BEAC">
+
+        <!-- 왼쪽 화살표 -->
+        <ImageView
+            android:id="@+id/left_arrow"
+            android:layout_width="36dp"
+            android:layout_height="48dp"
+            android:layout_gravity="start|center_vertical"
+            android:src="@drawable/ic_arrow_left"
+            android:background="@android:color/transparent"
+            android:visibility="gone"
+            android:elevation="4dp"
+            android:padding="2dp"/>
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:scrollbars="none"
+            android:clipToPadding="false"
+            android:background="#4DD6BEAC"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout_categories"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:theme="@style/ThemeOverlay.MaterialComponents.Light"
+                app:tabIndicatorColor="@android:color/transparent"
+                app:tabIndicatorHeight="0dp"
+                app:tabMaxWidth="150dp"
+                app:tabMinWidth="120dp"
+                app:tabPaddingStart="12dp"
+                app:tabPaddingEnd="12dp"
+                app:tabMode="scrollable"
+                app:tabGravity="fill"
+                app:tabSelectedTextColor="#836043"
+                app:tabTextColor="#757575"
+                app:tabTextAppearance="@style/CustomTabText"
+                android:contentDescription="메뉴 카테고리 선택 탭"/>
+        </HorizontalScrollView>
+
+        <!-- 오른쪽 화살표 -->
+        <ImageView
+            android:id="@+id/right_arrow"
+            android:layout_width="36dp"
+            android:layout_height="48dp"
+            android:layout_gravity="end|center_vertical"
+            android:src="@drawable/ic_arrow_right"
+            android:background="@android:color/transparent"
+            android:elevation="4dp"
+            android:padding="2dp"/>
+    </FrameLayout>
+
+    <!-- 그림자 구분선 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/subtle_shadow_t"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- ViewPager2를 먼저 배치 -->
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="1dp"
+            android:clipToPadding="false"
+            android:background="@android:color/transparent"/>
+
+        <!-- 장바구니 레이아웃을 ViewPager2 위에 겹치도록 배치 -->
+        <LinearLayout
+            android:id="@+id/cart_layout"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_gravity="bottom"
+            android:gravity="end|center_vertical"
+            android:paddingHorizontal="16dp"
+            android:background="#80FFFFFF"
+            android:elevation="8dp">
+
+            <ImageButton
+                android:id="@+id/btn_cart"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:padding="8dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_cart"
+                android:contentDescription="@string/cart" />
+
+            <TextView
+                android:id="@+id/tv_cart_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="0"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

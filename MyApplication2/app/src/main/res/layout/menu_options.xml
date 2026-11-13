@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_option_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="옵션 선택"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="16dp" />
+
+        <LinearLayout
+            android:id="@+id/container_hot_ice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_hot_and_ice_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="HOT/ICE"
+                android:textColor="#533434"
+                android:textSize="16sp"
+                android:padding="8dp" />
+
+            <RadioGroup
+                android:id="@+id/rg_hot_and_ice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <RadioButton
+                    android:id="@+id/rb_hot"
+                    android:layout_width="90dp"
+                    android:layout_height="50dp"
+                    android:button="@null"
+                    android:background="@drawable/custom_radio_button"
+                    android:gravity="center"
+                    android:text="HOT"
+                    android:layout_marginEnd="10dp"
+                    android:layout_gravity="center_vertical"/>
+
+                <RadioButton
+                    android:id="@+id/rb_ice"
+                    android:layout_width="90dp"
+                    android:layout_height="50dp"
+                    android:button="@null"
+                    android:background="@drawable/custom_radio_button"
+                    android:gravity="center"
+                    android:text="ICE"
+                    android:layout_gravity="center_vertical"/>
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/darker_gray" /> <!-- 수평 중앙 정렬 -->
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/container_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_size_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="사이즈"
+                android:textColor="#533434"
+                android:textSize="16sp"
+                android:padding="8dp"
+                android:layout_marginTop="14dp"/>
+
+            <RadioGroup
+                android:id="@+id/rg_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <RadioButton
+                    android:id="@+id/rb_regular"
+                    android:layout_width="90dp"
+                    android:layout_height="50dp"
+                    android:button="@null"
+                    android:background="@drawable/custom_radio_button"
+                    android:gravity="center"
+                    android:text="Regular"
+                    android:layout_marginEnd="10dp"
+                    android:layout_gravity="center_vertical"/>
+
+                <RadioButton
+                    android:id="@+id/rb_large"
+                    android:layout_width="90dp"
+                    android:layout_height="50dp"
+                    android:button="@null"
+                    android:background="@drawable/custom_radio_button"
+                    android:gravity="center"
+                    android:text="Large\n(+1000)"
+                    android:layout_gravity="center_vertical"/>
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/darker_gray" /> <!-- 수평 중앙 정렬 -->
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/container_shots_and_syrups"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_shots_and_syrups_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="추가옵션"
+                android:textColor="#533434"
+                android:textSize="16sp"
+                android:padding="8dp"
+                android:layout_marginTop="14dp"/>
+
+            <RadioGroup
+                android:id="@+id/rg_shots_and_syrups"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+
+                <!--샷-->
+                <LinearLayout
+                    android:id="@+id/layout_shot_option"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/tv_shot_quantiy"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="샷 추가"
+                        android:textSize="16sp"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/tv_shot_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="500원"
+                        android:textSize="16sp"
+                        android:layout_marginEnd="16dp"/>
+
+                    <LinearLayout
+                        android:id="@+id/pm"
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|end">
+
+                        <ImageButton
+                            android:id="@+id/btn_decrease_shot"
+                            android:layout_width="30dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_minus"
+                            android:background="?attr/selectableItemBackground"
+                            android:contentDescription="Decrease Shot Quantity"
+                            app:tint="#BFBFBF" />
+
+                        <TextView
+                            android:id="@+id/tv_shot_quantity"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textSize="16sp" />
+
+                        <ImageButton
+                            android:id="@+id/btn_increase_shot"
+                            android:layout_width="30dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_plus"
+                            android:background="?attr/selectableItemBackground"
+                            android:contentDescription="Increase Shot Quantity"
+                            app:tint="#BFBFBF" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--디카페인샷-->
+                <LinearLayout
+                    android:id="@+id/layout_decaf_option"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/tv_decaf_quantiy"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="디카페인 커피 샷 추가"
+                        android:textSize="16sp"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/tv_decaf_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="800원"
+                        android:textSize="16sp"
+                        android:layout_marginEnd="16dp"/>
+
+                    <LinearLayout
+                        android:id="@+id/pmdecaf"
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|end">
+
+                        <ImageButton
+                            android:id="@+id/btn_decrease_decaf"
+                            android:layout_width="30dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_minus"
+                            android:background="?attr/selectableItemBackground"
+                            android:contentDescription="Decrease Shot Quantity"
+                            app:tint="#BFBFBF" />
+
+                        <TextView
+                            android:id="@+id/tv_decaf_quantity"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textSize="16sp" />
+
+                        <ImageButton
+                            android:id="@+id/btn_increase_decaf"
+                            android:layout_width="30dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_plus"
+                            android:background="?attr/selectableItemBackground"
+                            android:contentDescription="Increase Shot Quantity"
+                            app:tint="#BFBFBF" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--바닐라-->
+                <LinearLayout
+                    android:id="@+id/layout_vanilla_option"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/tv_vanilla_quantiy"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="바닐라시럽 추가"
+                        android:textSize="16sp"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/tv_vanilla_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="500원"
+                        android:textSize="16sp"
+                        android:layout_marginEnd="16dp"/>
+
+                    <LinearLayout
+                        android:id="@+id/pmvanilla"
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|end">
+
+                        <ImageButton
+                            android:id="@+id/btn_decrease_vanilla"
+                            android:layout_width="30dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_minus"
+                            android:background="?attr/selectableItemBackground"
+                            android:contentDescription="Decrease Shot Quantity"
+                            app:tint="#BFBFBF" />
+
+                        <TextView
+                            android:id="@+id/tv_vanilla_quantity"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textSize="16sp" />
+
+                        <ImageButton
+                            android:id="@+id/btn_increase_vanilla"
+                            android:layout_width="30dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_plus"
+                            android:background="?attr/selectableItemBackground"
+                            android:contentDescription="Increase Shot Quantity"
+                            app:tint="#BFBFBF" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_hazelnut_option"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/tv_hazelnut"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="헤이즐럿 시럽 추가"
+                        android:textSize="16sp"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/tv_hazelnut_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="500원"
+                        android:textSize="16sp"
+                        android:layout_marginEnd="16dp"/>
+
+                    <LinearLayout
+                        android:id="@+id/pm2"
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|end">
+
+                        <ImageButton
+                            android:id="@+id/btn_decrease_hazelnut"
+                            android:layout_width="30dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_minus"
+                            android:background="?attr/selectableItemBackground"
+                            android:contentDescription="Decrease Shot Quantity"
+                            app:tint="#BFBFBF" />
+
+                        <TextView
+                            android:id="@+id/tv_hazelnut_quantity"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textSize="16sp" />
+
+                        <ImageButton
+                            android:id="@+id/btn_increase_hazelnut"
+                            android:layout_width="30dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_plus"
+                            android:background="?attr/selectableItemBackground"
+                            android:contentDescription="Increase Shot Quantity"
+                            app:tint="#BFBFBF" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--휘핑크림-->
+                <LinearLayout
+                    android:id="@+id/layout_cream_option"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/tv_cream_quantiy"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="휘핑 크림 추가"
+                        android:textSize="16sp"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/tv_cream_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="800원"
+                        android:textSize="16sp"
+                        android:layout_marginEnd="16dp"/>
+
+                    <LinearLayout
+                        android:id="@+id/pmcream"
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|end">
+
+                        <ImageButton
+                            android:id="@+id/btn_decrease_cream"
+                            android:layout_width="30dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_minus"
+                            android:background="?attr/selectableItemBackground"
+                            android:contentDescription="Decrease Shot Quantity"
+                            app:tint="#BFBFBF" />
+
+                        <TextView
+                            android:id="@+id/tv_cream_quantity"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textSize="16sp" />
+
+                        <ImageButton
+                            android:id="@+id/btn_increase_cream"
+                            android:layout_width="30dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_plus"
+                            android:background="?attr/selectableItemBackground"
+                            android:contentDescription="Increase Shot Quantity"
+                            app:tint="#BFBFBF" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--타피오카-->
+                <LinearLayout
+                    android:id="@+id/layout_tapioca_option"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/tv_tapioca"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="타피오카 펄 추가"
+                        android:layout_marginStart="5dp"
+                        android:textSize="16sp"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/tv_tapioca_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1000원"
+                        android:textSize="16sp"
+                        android:layout_marginEnd="16dp"/>
+
+                    <LinearLayout
+                        android:id="@+id/pm3"
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|end">
+
+                        <ImageButton
+                            android:id="@+id/btn_decrease_tapioca"
+                            android:layout_width="30dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_minus"
+                            android:background="?attr/selectableItemBackground"
+                            android:contentDescription="Decrease Shot Quantity"
+                            app:tint="#BFBFBF" />
+
+                        <TextView
+                            android:id="@+id/tv_tapioca_quantity"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textSize="16sp" />
+
+                        <ImageButton
+                            android:id="@+id/btn_increase_tapioca"
+                            android:layout_width="30dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_plus"
+                            android:background="?attr/selectableItemBackground"
+                            android:contentDescription="Increase Shot Quantity"
+                            app:tint="#BFBFBF" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--아이스크림-->
+                <LinearLayout
+                    android:id="@+id/layout_icec_option"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/tv_icec_quantiy"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="바닐라 아이스크림 추가"
+                        android:textSize="16sp"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/tv_icec_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1500원"
+                        android:textSize="16sp"
+                        android:layout_marginEnd="16dp"/>
+
+                    <LinearLayout
+                        android:id="@+id/pmicec"
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|end">
+
+                        <ImageButton
+                            android:id="@+id/btn_decrease_icec"
+                            android:layout_width="30dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_minus"
+                            android:background="?attr/selectableItemBackground"
+                            android:contentDescription="Decrease Shot Quantity"
+                            app:tint="#BFBFBF" />
+
+                        <TextView
+                            android:id="@+id/tv_icec_quantity"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textSize="16sp" />
+
+                        <ImageButton
+                            android:id="@+id/btn_increase_icec"
+                            android:layout_width="30dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_plus"
+                            android:background="?attr/selectableItemBackground"
+                            android:contentDescription="Increase Shot Quantity"
+                            app:tint="#BFBFBF" />
+                    </LinearLayout>
+                </LinearLayout>
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <!-- 감소 버튼 -->
+            <ImageButton
+                android:id="@+id/btn_decrease_quantity"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_minus"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="Decrease Quantity"
+                app:tint="#BFBFBF" />
+
+            <!-- 수량 표시 -->
+            <TextView
+                android:id="@+id/tv_quantity"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="1"
+                android:textSize="16sp" />
+
+            <!-- 증가 버튼 -->
+            <ImageButton
+                android:id="@+id/btn_increase_quantity"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_plus"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="Increase Quantity"
+                app:tint="#BFBFBF" />
+
+            <TextView
+                android:id="@+id/tv_menu_totalprice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="0원"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:gravity="end"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!-- 담기 버튼 -->
+            <Button
+                android:id="@+id/btn_add_to_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#836043"
+                android:text="담기"
+                app:cornerRadius="16dp"
+                android:textColor="@android:color/white" />
+
+            <!-- 버튼과 세로선 사이의 간격 -->
+            <View
+                android:layout_width="1dp"
+                android:layout_height="20dp"
+                android:layout_marginHorizontal="8dp"
+                android:background="#000000" />
+
+            <!-- 주문하기 버튼 -->
+            <Button
+                android:id="@+id/btn_place_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#836043"
+                android:text="주문하기"
+                app:cornerRadius="16dp"
+                android:textColor="@android:color/white" />
+
+            <!-- 버튼들과 즐겨찾기 아이콘 사이의 여백 -->
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <!-- 즐겨찾기 버튼 -->
+            <ImageButton
+                android:id="@+id/btn_favorite"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackground"
+                android:src="@drawable/ic_unfavorite"
+                android:contentDescription="즐겨찾기"
+                app:tint="#533434"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

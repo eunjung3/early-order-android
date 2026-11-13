@@ -1,0 +1,29 @@
+# Android Studio and Gradle
+**/.gradle/
+**/.idea/
+**/build/
+**/local.properties
+**/google-services.json
+**/.externalNativeBuild/
+**/.cxx/
+**/captures/
+**/.vscode/
+
+# Signing files and local secrets
+*.jks
+*.keystore
+**/.env
+**/.env.*
+
+# Generated or local data
+**/venv/
+**/__pycache__/
+*.py[cod]
+*.db
+.DS_Store
+
+# Teammate-owned server code and assets
+/MyApplication2/1122backend/
+
+# Stray temporary file in the Android project directory
+/MyApplication2/CartFragment.kt

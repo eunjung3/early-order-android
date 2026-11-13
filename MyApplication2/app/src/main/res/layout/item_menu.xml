@@ -1,0 +1,54 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@android:color/white"
+    android:padding="16dp"
+    android:alpha="1.0">
+
+    <!-- 메뉴 이미지 -->
+    <ImageView
+        android:id="@+id/img_menu"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop" />
+
+    <!-- 메뉴 정보 (이름 및 가격) -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingStart="16dp">
+
+        <TextView
+            android:id="@+id/tv_menu_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Menu Name"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/tv_menu_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"
+            android:textColor="@android:color/darker_gray" />
+    </LinearLayout>
+
+    <!-- 품절 표시 -->
+    <TextView
+        android:id="@+id/tv_sold_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="품절"
+        android:textSize="14sp"
+        android:textColor="@android:color/holo_red_dark"
+        android:padding="8dp"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+</LinearLayout>

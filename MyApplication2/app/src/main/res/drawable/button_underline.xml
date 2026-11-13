@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/white" />
+        </shape>
+    </item>
+
+    <item android:top="90dp"> <!-- 밑줄의 위치 조정 -->
+        <shape android:shape="rectangle">
+            <solid android:color="#533434" /> <!-- 원하는 밑줄 색상 -->
+            <size android:height="2dp" /> <!-- 밑줄 두께 -->
+        </shape>
+    </item>
+</layer-list>

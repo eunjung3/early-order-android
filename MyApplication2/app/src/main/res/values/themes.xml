@@ -1,0 +1,27 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MyApplication" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">#836043</item>
+        <item name="colorPrimaryVariant">#6D4E36</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">#836043</item>
+        <item name="colorSecondaryVariant">#6D4E36</item>
+        <item name="colorOnSecondary">@color/white</item>
+        
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        
+        <!-- Customize your theme here -->
+        <item name="android:colorControlHighlight">#40836043</item>  <!-- 리플 효과 색상 -->
+        <item name="colorControlActivated">#836043</item>  <!-- 체크박스, 라디오 버튼 등의 선택 색상 -->
+        <item name="android:colorEdgeEffect">#836043</item>  <!-- 스크롤 시 오버스크롤 효과 색상 -->
+        
+        <!-- 스위치, 프로그레스바 등의 색상 -->
+        <item name="colorAccent">#836043</item>
+    </style>
+
+    <style name="Theme.MyApplication" parent="Base.Theme.MyApplication" />
+</resources>

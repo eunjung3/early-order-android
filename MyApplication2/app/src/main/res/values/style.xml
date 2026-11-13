@@ -1,0 +1,33 @@
+<resources>
+
+    <!-- Custom style for BottomNavigationView -->
+    <style name="CustomBottomNavView" parent="Widget.Design.BottomNavigationView">
+        <item name="android:background">#4DD6BEAC</item> <!-- 전체 배경색 -->
+        <item name="itemSpacing">3dp</item>
+    </style>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#4DD6BEAC</item>
+        <item name="colorPrimaryDark">#836043</item>
+        <item name="colorAccent">#757575</item>
+
+        <item name="android:buttonStyle">@null</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="">
+        <!-- Overlay for the AppBar -->
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <!-- 커스텀 AlertDialog 스타일 추가 -->
+    <style name="CustomAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowMinWidthMajor">80%</item>
+        <item name="android:windowMinWidthMinor">80%</item>
+    </style>
+
+    <style name="CustomTabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+</resources>
