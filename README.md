@@ -1,6 +1,6 @@
 # 얼리오더 (EarlyOrder)
 
-카페 메뉴를 살펴보고 앱에서 주문 및 결제 절차를 진행하는 Android 사전 주문 앱입니다.
+교내 카페의 메뉴를 살펴보고 앱에서 주문 및 결제를 진행하는 Android 주문 앱입니다.
 
 ## 프로젝트 소개
 
@@ -11,6 +11,7 @@
 - 구성: Android 앱, 관리자 웹(HTML/CSS/JavaScript), 서버(FastAPI, MariaDB, kt cloud Ubuntu, Toss Payments)
 
 서버(FastAPI)와 관리자 웹은 팀원이 개발했으며 이 저장소에는 포함하지 않았습니다.
+현재 운영 서버는 종료된 상태이므로 실제 로그인, 메뉴 조회, 장바구니 및 결제 기능은 확인할 수 없습니다.
 
 ## 사용 기술
 
@@ -36,37 +37,27 @@
 .
 ├── README.md
 ├── .gitignore
-├── docs/
-│   └── screenshots/              # 앱 화면 캡처
 └── MyApplication2/
     ├── app/
     │   ├── src/main/java/        # Kotlin 앱 코드
+    │   │   └── com/example/
+    │   │       └── myapplication/
     │   ├── src/main/res/         # Android 리소스
+    │   │   ├── layout/           # Activity 및 Fragment 레이아웃
+    │   │   ├── drawable/         # 이미지 및 상태 Drawable
+    │   │   ├── menu/             # 내비게이션 메뉴
+    │   │   └── values/           # 문자열, 색상, 테마
     │   ├── src/test/             # 단위 테스트
     │   ├── src/androidTest/      # 계측 테스트
-    │   └── build.gradle.kts       # 앱 의존성 및 빌드 설정
-    ├── gradle/                   # Gradle Wrapper 및 버전 카탈로그
-    ├── build.gradle.kts
-    ├── settings.gradle.kts
+    │   └── build.gradle.kts      # 앱 의존성 및 빌드 설정
+    ├── gradle/
+    │   ├── libs.versions.toml    # 공통 라이브러리 버전 카탈로그
+    │   └── wrapper/              # Gradle Wrapper 설정
+    ├── build.gradle.kts          # 프로젝트 공통 플러그인 설정
+    ├── settings.gradle.kts       # 모듈 및 저장소 설정
+    ├── gradle.properties
     └── gradlew(.bat)
 ```
-
-## 실행 준비
-
-1. Android Studio에서 `MyApplication2` 폴더를 엽니다.
-2. Android SDK 설정이 들어 있는 `MyApplication2/local.properties`에 아래 항목을 추가합니다. 값은 사용 가능한 서버 주소로 바꾸고 URL 끝에 `/`를 포함해야 합니다.
-
-   ```properties
-   APP_URL=https://your-api.example.com/
-   ```
-
-3. Gradle 동기화 후 앱을 실행합니다. 앱의 API 요청과 결제 준비에는 별도 서버가 필요합니다. HTTP 주소를 설정하면 앱의 cleartext 통신이 허용되므로, 가능하면 HTTPS 주소를 사용하세요.
-
-## 스크린샷
-
-화면 캡처를 `docs/screenshots/`에 추가한 뒤 아래에 정리할 예정입니다.
-
-<!-- 예: ![메뉴 화면](docs/screenshots/menu.png) -->
 
 ## 참고
 
